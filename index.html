@@ -22,6 +22,7 @@
         </span>
         <span><b>lakeclean</b><small>AI MISSION CONTROL</small></span>
       </a>
+
       <div class="workspace-label">WORKSPACE</div>
       <nav class="primary-nav" aria-label="Main navigation">
         <button class="nav-link active" data-page="overview"><span class="nav-icon">◫</span>Overview</button>
@@ -29,17 +30,20 @@
         <button class="nav-link" data-page="analytics"><span class="nav-icon">▥</span>Analytics</button>
         <button class="nav-link" data-page="system"><span class="nav-icon">⚙</span>System</button>
       </nav>
+
       <div class="sidebar-spacer"></div>
+
       <div class="lake-card">
         <div class="lake-card-top"><span class="live-dot"></span><span>FIELD SITE</span><span class="more">···</span></div>
         <strong>Lake Willowmere</strong>
-        <div class="lake-meta">Banglore, Karnataka <span>⌖</span></div>
+        <div class="lake-meta">Pune, Maharashtra <span>⌖</span></div>
         <div class="lake-divider"></div>
         <div class="lake-weather"><span>☀</span><b>28°</b><small>Clear skies</small><span class="weather-wind">↗ 8 km/h</span></div>
       </div>
+
       <button class="profile">
         <span class="avatar">AS</span>
-        <span class="profile-name"><b>Admin</b><small>Field operator</small></span>
+        <span class="profile-name"><b>Arjun Sharma</b><small>Field operator</small></span>
         <span class="profile-dots">···</span>
       </button>
     </aside>
@@ -58,7 +62,7 @@
         <div class="welcome-row">
           <div>
             <div class="eyebrow"><span class="pulse-ring"></span>THURSDAY, 07 NOVEMBER 2026 <span class="eyebrow-dot">·</span> 10:42 AM IST</div>
-            <h1 id="page-title">Good morning, Admin <span class="wave">✳</span></h1>
+            <h1 id="page-title">Good morning, Arjun <span class="wave">✳</span></h1>
             <p class="page-subtitle" id="page-subtitle">Your lake is looking good today. Here's what's happening on the water.</p>
           </div>
           <button class="button button-primary" id="plan-mission"><span class="plus">＋</span> Plan a mission</button>
@@ -100,11 +104,13 @@
               <div><div class="section-kicker">LIVE MONITOR</div><h2>On the water <span class="tiny-live"><i></i>LIVE</span></h2></div>
               <button class="icon-button more-button" aria-label="More live monitor options">···</button>
             </div>
+
             <div class="camera-tabs" role="tablist" aria-label="Camera view">
-              <button type="button" role="tab" aria-selected="false" class="camera-tab" data-camera="surface">Surface view <span class="camera-online">●</span></button>
-              <button type="button" role="tab" aria-selected="true" class="camera-tab selected" data-camera="underwater">Underwater view <span class="camera-online">●</span></button>
+              <button type="button" role="tab" aria-selected="false" class="camera-tab" data-camera="surface" onclick="switchCameraCSS('surface')">Surface view <span class="camera-online">●</span></button>
+              <button type="button" role="tab" aria-selected="true" class="camera-tab selected" data-camera="underwater" onclick="switchCameraCSS('underwater')">Underwater view <span class="camera-online">●</span></button>
               <button type="button" class="camera-res" data-resolution="1080p" aria-label="Change camera resolution">1080p <span>⌄</span></button>
             </div>
+
             <div class="camera-view underwater" id="camera-view">
               <div class="camera-overlay-top"><span><i></i> CAM 02 · SONAR</span><span>REC <b>●</b></span></div>
               <div class="water-scene" id="water-scene">
@@ -117,6 +123,7 @@
               </div>
               <div class="camera-overlay-bottom"><span>⌖ DEPTH 6.4 M · SONAR ACTIVE</span><span>● LIVE FEED &nbsp;·&nbsp; 30 FPS</span></div>
             </div>
+
             <div class="detection-summary">
               <div><span class="detection-dot plastic"></span><span>Plastic bottles</span><b id="bottle-count">05</b></div>
               <div><span class="detection-dot organic"></span><span>Organic waste</span><b id="organic-count">02</b></div>
@@ -130,10 +137,15 @@
               <div><div class="section-kicker">WASTE DENSITY MAP</div><h2>Lake overview <span class="map-sync"><i></i>Synced just now</span></h2></div>
               <button class="icon-button map-expand" aria-label="Expand map">⛶</button>
             </div>
+
             <div class="map-toolbar">
-              <div class="map-toggle" role="tablist"><button class="active" data-map="surface">Surface</button><button data-map="underwater">Underwater</button></div>
+              <div class="map-toggle" role="tablist" aria-label="Waste map layer">
+                <button type="button" role="tab" aria-selected="true" class="active" data-map="surface" onclick="switchMapCSS('surface')">Surface</button>
+                <button type="button" role="tab" aria-selected="false" data-map="underwater" onclick="switchMapCSS('underwater')">Underwater</button>
+              </div>
               <button class="map-filter">Last 24 hours <span>⌄</span></button>
             </div>
+
             <div class="lake-map" id="lake-map">
               <div class="map-grid"></div>
               <svg class="lake-shape" viewBox="0 0 560 270" preserveAspectRatio="none" aria-label="Illustrated waste density map of Lake Willowmere">
@@ -148,8 +160,11 @@
                   <circle cx="221" cy="180" r="22" class="heat heat-med"/><circle cx="221" cy="180" r="9" class="heat-core"/>
                 </g>
                 <g class="map-labels">
-                  <text x="55" y="110">NORTH COVE</text><text x="360" y="108">WILLOW POINT</text><text x="260" y="218">SOUTH BASIN</text>
-                  <text x="168" y="85">↗</text><text x="436" y="148">↙</text>
+                  <text x="55" y="110">NORTH COVE</text>
+                  <text x="360" y="108">WILLOW POINT</text>
+                  <text x="260" y="218">SOUTH BASIN</text>
+                  <text x="168" y="85">↗</text>
+                  <text x="436" y="148">↙</text>
                 </g>
                 <g class="map-robot"><circle cx="336" cy="149" r="14"/><text x="336" y="153">⌁</text></g>
                 <g class="map-dock"><path d="M72 178l9 9-9 9-9-9z"/><text x="82" y="195">DOCK</text></g>
@@ -193,7 +208,11 @@
             <label class="select-label" for="mode-select">OPERATING MODE</label>
             <div class="select-wrap">
               <select id="mode-select">
-                <option>Cleaning</option><option>Survey</option><option>Low-Power Patrol</option><option>Return-to-Dock</option><option>Emergency-Safe</option>
+                <option>Cleaning</option>
+                <option>Survey</option>
+                <option>Low-Power Patrol</option>
+                <option>Return-to-Dock</option>
+                <option>Emergency-Safe</option>
               </select>
               <span>⌄</span>
             </div>
@@ -268,6 +287,44 @@
     </div>
   </div>
 
-  <script src="app.js?v=2"></script>
+  <script src="app.js?v=3"></script>
+  <script>
+    function switchCameraCSS(view) {
+      const isUnderwater = view === 'underwater';
+      document.getElementById('camera-view').classList.toggle('underwater', isUnderwater);
+      document.querySelectorAll('[data-camera]').forEach((tab) => {
+        const selected = tab.dataset.camera === view;
+        tab.classList.toggle('selected', selected);
+        tab.setAttribute('aria-selected', String(selected));
+      });
+    }
+  </script>
+  <script>
+    function switchMapCSS(mode) {
+      const underwater = mode === 'underwater';
+      document.querySelectorAll('[data-map]').forEach((tab) => {
+        const selected = tab.dataset.map === mode;
+        tab.classList.toggle('active', selected);
+        tab.setAttribute('aria-selected', String(selected));
+      });
+
+      const hotspots = document.querySelector('.hotspots');
+      if (hotspots) {
+        hotspots.style.filter = underwater ? 'hue-rotate(125deg) saturate(.85)' : '';
+      }
+
+      const labels = document.querySelectorAll('.map-labels text');
+      if (labels.length >= 3) {
+        labels[0].textContent = underwater ? 'NORTH BED' : 'NORTH COVE';
+        labels[1].textContent = underwater ? 'REEF EDGE' : 'WILLOW POINT';
+        labels[2].textContent = underwater ? 'DEEP BASIN' : 'SOUTH BASIN';
+      }
+
+      const hotspotCount = document.querySelector('.map-footer b');
+      if (hotspotCount) {
+        hotspotCount.textContent = underwater ? '3 hotspots' : '4 hotspots';
+      }
+    }
+  </script>
 </body>
 </html>
