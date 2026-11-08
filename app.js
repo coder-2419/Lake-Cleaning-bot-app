@@ -27,7 +27,11 @@ $$('[data-page]').forEach(button => button.addEventListener('click', () => {
 
 const cameraView = $('#camera-view');
 $$('[data-camera]').forEach(tab => tab.addEventListener('click', () => {
-  $$('[data-camera]').forEach(item => item.classList.toggle('selected', item === tab));
+  $$('[data-camera]').forEach(item => {
+    const selected = item === tab;
+    item.classList.toggle('selected', selected);
+    item.setAttribute('aria-selected', String(selected));
+  });
   cameraView.classList.toggle('underwater', tab.dataset.camera === 'underwater');
   const isUnderwater = tab.dataset.camera === 'underwater';
   $('.camera-overlay-top span:first-child').innerHTML = `<i></i> CAM ${isUnderwater ? '02 · SONAR' : '01 · FRONT'}`;

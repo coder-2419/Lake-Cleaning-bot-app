@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=2" />
 </head>
 <body>
   <div class="app-shell">
@@ -16,13 +16,12 @@
       <a class="brand" href="#overview" aria-label="LakeClean home">
         <span class="brand-mark">
           <svg viewBox="0 0 32 32" aria-hidden="true">
-            <path d="M16 3C12 9 7 14 7 20a9 9 0 0 0 18 0c0-6-5-11-9-17Z" />
-            <path d="M11 21c1.3 2 3 3 5.5 3" />
+            <path d="M16 3C12 9 7 14 7 20a9 9 0 0 0 18 0c0-6-5-11-9-17Z"/>
+            <path d="M11 21c1.3 2 3 3 5.5 3"/>
           </svg>
         </span>
         <span><b>lakeclean</b><small>AI MISSION CONTROL</small></span>
       </a>
-
       <div class="workspace-label">WORKSPACE</div>
       <nav class="primary-nav" aria-label="Main navigation">
         <button class="nav-link active" data-page="overview"><span class="nav-icon">◫</span>Overview</button>
@@ -30,20 +29,17 @@
         <button class="nav-link" data-page="analytics"><span class="nav-icon">▥</span>Analytics</button>
         <button class="nav-link" data-page="system"><span class="nav-icon">⚙</span>System</button>
       </nav>
-
       <div class="sidebar-spacer"></div>
-
       <div class="lake-card">
         <div class="lake-card-top"><span class="live-dot"></span><span>FIELD SITE</span><span class="more">···</span></div>
         <strong>Lake Willowmere</strong>
-        <div class="lake-meta">Pune, Maharashtra <span>⌖</span></div>
+        <div class="lake-meta">Banglore, Karnataka <span>⌖</span></div>
         <div class="lake-divider"></div>
         <div class="lake-weather"><span>☀</span><b>28°</b><small>Clear skies</small><span class="weather-wind">↗ 8 km/h</span></div>
       </div>
-
       <button class="profile">
         <span class="avatar">AS</span>
-        <span class="profile-name"><b>Arjun Sharma</b><small>Field operator</small></span>
+        <span class="profile-name"><b>Admin</b><small>Field operator</small></span>
         <span class="profile-dots">···</span>
       </button>
     </aside>
@@ -62,7 +58,7 @@
         <div class="welcome-row">
           <div>
             <div class="eyebrow"><span class="pulse-ring"></span>THURSDAY, 07 NOVEMBER 2026 <span class="eyebrow-dot">·</span> 10:42 AM IST</div>
-            <h1 id="page-title">Good morning, Arjun <span class="wave">✳</span></h1>
+            <h1 id="page-title">Good morning, Admin <span class="wave">✳</span></h1>
             <p class="page-subtitle" id="page-subtitle">Your lake is looking good today. Here's what's happening on the water.</p>
           </div>
           <button class="button button-primary" id="plan-mission"><span class="plus">＋</span> Plan a mission</button>
@@ -84,12 +80,12 @@
           <article class="kpi-card">
             <div class="kpi-heading">BATTERY <span class="kpi-trend positive">↗ 2.4%</span></div>
             <div class="kpi-value-row"><strong class="kpi-value"><span id="battery-value">84</span><small>%</small></strong><span class="kpi-icon battery-icon">▰</span></div>
-            <div class="kpi-foot"><span>Est. runtime <b>·</b> <strong id="runtime-value">6h 42m</strong></span><span class="tiny-sparkline"><svg viewBox="0 0 76 20"><path d="M1 15 10 12 18 14 27 7 36 10 44 4 54 8 63 3 75 5" /></svg></span></div>
+            <div class="kpi-foot"><span>Est. runtime <b>·</b> <strong id="runtime-value">6h 42m</strong></span><span class="tiny-sparkline"><svg viewBox="0 0 76 20"><path d="M1 15 10 12 18 14 27 7 36 10 44 4 54 8 63 3 75 5"/></svg></span></div>
           </article>
           <article class="kpi-card">
             <div class="kpi-heading">SOLAR INPUT <span class="kpi-trend positive">☼ Harvesting</span></div>
             <div class="kpi-value-row"><strong class="kpi-value"><span id="solar-value">186</span><small> W</small></strong><span class="kpi-icon solar-icon">☼</span></div>
-            <div class="kpi-foot"><span>Array output <b>·</b> <strong>72%</strong></span><span class="tiny-sparkline solar-line"><svg viewBox="0 0 76 20"><path d="M1 16 10 10 18 13 27 5 36 9 44 3 54 7 63 4 75 2" /></svg></span></div>
+            <div class="kpi-foot"><span>Array output <b>·</b> <strong>72%</strong></span><span class="tiny-sparkline solar-line"><svg viewBox="0 0 76 20"><path d="M1 16 10 10 18 13 27 5 36 9 44 3 54 7 63 4 75 2"/></svg></span></div>
           </article>
           <article class="kpi-card">
             <div class="kpi-heading">COLLECTION BIN <span class="kpi-trend">Capacity</span></div>
@@ -104,27 +100,27 @@
               <div><div class="section-kicker">LIVE MONITOR</div><h2>On the water <span class="tiny-live"><i></i>LIVE</span></h2></div>
               <button class="icon-button more-button" aria-label="More live monitor options">···</button>
             </div>
-            <div class="camera-tabs" role="tablist">
-              <button class="camera-tab selected" data-camera="surface">Surface view <span class="camera-online">●</span></button>
-              <button class="camera-tab" data-camera="underwater">Underwater view <span class="camera-online">●</span></button>
+            <div class="camera-tabs" role="tablist" aria-label="Camera view">
+              <button type="button" role="tab" aria-selected="false" class="camera-tab" data-camera="surface">Surface view <span class="camera-online">●</span></button>
+              <button type="button" role="tab" aria-selected="true" class="camera-tab selected" data-camera="underwater">Underwater view <span class="camera-online">●</span></button>
               <button type="button" class="camera-res" data-resolution="1080p" aria-label="Change camera resolution">1080p <span>⌄</span></button>
             </div>
-            <div class="camera-view" id="camera-view">
-              <div class="camera-overlay-top"><span><i></i> CAM 01 · FRONT</span><span>REC <b>●</b></span></div>
+            <div class="camera-view underwater" id="camera-view">
+              <div class="camera-overlay-top"><span><i></i> CAM 02 · SONAR</span><span>REC <b>●</b></span></div>
               <div class="water-scene" id="water-scene">
                 <div class="sun-glow"></div><div class="horizon"></div>
                 <div class="shore shore-left"></div><div class="shore shore-right"></div>
                 <div class="water-ripples ripple-one"></div><div class="water-ripples ripple-two"></div>
-                <div class="detection-box detection-a"><span>PLASTIC BOTTLE</span></div>
-                <div class="detection-box detection-b"><span>FLOATING DEBRIS</span></div>
+                <div class="detection-box detection-a"><span>SUBMERGED PLASTIC</span></div>
+                <div class="detection-box detection-b"><span>SNAGGED DEBRIS</span></div>
                 <div class="robot-shadow"></div><div class="camera-crosshair">＋</div>
               </div>
-              <div class="camera-overlay-bottom"><span>⌾ 18.5204° N&nbsp; 73.8567° E</span><span>● LIVE FEED &nbsp;·&nbsp; 30 FPS</span></div>
+              <div class="camera-overlay-bottom"><span>⌖ DEPTH 6.4 M · SONAR ACTIVE</span><span>● LIVE FEED &nbsp;·&nbsp; 30 FPS</span></div>
             </div>
             <div class="detection-summary">
-              <div><span class="detection-dot plastic"></span><span>Plastic bottles</span><b id="bottle-count">03</b></div>
-              <div><span class="detection-dot organic"></span><span>Organic waste</span><b id="organic-count">08</b></div>
-              <div><span class="detection-dot other"></span><span>Other debris</span><b id="other-count">02</b></div>
+              <div><span class="detection-dot plastic"></span><span>Plastic bottles</span><b id="bottle-count">05</b></div>
+              <div><span class="detection-dot organic"></span><span>Organic waste</span><b id="organic-count">02</b></div>
+              <div><span class="detection-dot other"></span><span>Other debris</span><b id="other-count">04</b></div>
               <button class="view-detections">View all <span>→</span></button>
             </div>
           </article>
@@ -141,22 +137,22 @@
             <div class="lake-map" id="lake-map">
               <div class="map-grid"></div>
               <svg class="lake-shape" viewBox="0 0 560 270" preserveAspectRatio="none" aria-label="Illustrated waste density map of Lake Willowmere">
-                <path class="land-shape" d="M0 0h560v42c-51 7-76 20-109 17-33-4-58 10-92 7-45-4-64 19-101 17-36-1-67-16-95-4-34 15-51 7-88 15L0 84Z" />
-                <path class="land-shape" d="M0 270h560v-36c-50-10-76-7-103-18-27-12-60-7-91-2-38 7-55-11-90-6-43 7-65 17-100 3-29-12-49 4-82-5L0 208Z" />
-                <path class="lake-water" d="M0 84c37-8 54 0 88-15 28-12 59 3 95 4 37 2 56-21 101-17 34 3 59-11 92-7 33 3 58-10 109-17v196c-50-10-76-7-103-18-27-12-60-7-91-2-38 7-55-11-90-6-43 7-65 17-100 3-29-12-49 4-82-5L0 208Z" />
-                <path class="shoreline" d="M0 84c37-8 54 0 88-15 28-12 59 3 95 4 37 2 56-21 101-17 34 3 59-11 92-7 33 3 58-10 109-17M0 208c33 9 53-7 82 5 35 14 57 4 100-3 35-5 52 13 90 6 31-5 64-10 91 2 27 11 53 8 103 18" />
+                <path class="land-shape" d="M0 0h560v42c-51 7-76 20-109 17-33-4-58 10-92 7-45-4-64 19-101 17-36-1-67-16-95-4-34 15-51 7-88 15L0 84Z"/>
+                <path class="land-shape" d="M0 270h560v-36c-50-10-76-7-103-18-27-12-60-7-91-2-38 7-55-11-90-6-43 7-65 17-100 3-29-12-49 4-82-5L0 208Z"/>
+                <path class="lake-water" d="M0 84c37-8 54 0 88-15 28-12 59 3 95 4 37 2 56-21 101-17 34 3 59-11 92-7 33 3 58-10 109-17v196c-50-10-76-7-103-18-27-12-60-7-91-2-38 7-55-11-90-6-43 7-65 17-100 3-29-12-49 4-82-5L0 208Z"/>
+                <path class="shoreline" d="M0 84c37-8 54 0 88-15 28-12 59 3 95 4 37 2 56-21 101-17 34 3 59-11 92-7 33 3 58-10 109-17M0 208c33 9 53-7 82 5 35 14 57 4 100-3 35-5 52 13 90 6 31-5 64-10 91 2 27 11 53 8 103 18"/>
                 <g class="hotspots">
-                  <circle cx="120" cy="138" r="32" class="heat heat-med" /><circle cx="120" cy="138" r="13" class="heat-core" />
-                  <circle cx="288" cy="104" r="39" class="heat heat-high" /><circle cx="288" cy="104" r="17" class="heat-core" />
-                  <circle cx="400" cy="172" r="29" class="heat heat-low" /><circle cx="400" cy="172" r="11" class="heat-core" />
-                  <circle cx="221" cy="180" r="22" class="heat heat-med" /><circle cx="221" cy="180" r="9" class="heat-core" />
+                  <circle cx="120" cy="138" r="32" class="heat heat-med"/><circle cx="120" cy="138" r="13" class="heat-core"/>
+                  <circle cx="288" cy="104" r="39" class="heat heat-high"/><circle cx="288" cy="104" r="17" class="heat-core"/>
+                  <circle cx="400" cy="172" r="29" class="heat heat-low"/><circle cx="400" cy="172" r="11" class="heat-core"/>
+                  <circle cx="221" cy="180" r="22" class="heat heat-med"/><circle cx="221" cy="180" r="9" class="heat-core"/>
                 </g>
                 <g class="map-labels">
                   <text x="55" y="110">NORTH COVE</text><text x="360" y="108">WILLOW POINT</text><text x="260" y="218">SOUTH BASIN</text>
                   <text x="168" y="85">↗</text><text x="436" y="148">↙</text>
                 </g>
-                <g class="map-robot"><circle cx="336" cy="149" r="14" /><text x="336" y="153">⌁</text></g>
-                <g class="map-dock"><path d="M72 178l9 9-9 9-9-9z" /><text x="82" y="195">DOCK</text></g>
+                <g class="map-robot"><circle cx="336" cy="149" r="14"/><text x="336" y="153">⌁</text></g>
+                <g class="map-dock"><path d="M72 178l9 9-9 9-9-9z"/><text x="82" y="195">DOCK</text></g>
               </svg>
               <div class="map-zoom"><button aria-label="Zoom in">＋</button><button aria-label="Zoom out">−</button></div>
               <div class="map-legend"><span>DENSITY</span><i class="legend-low"></i><i class="legend-mid"></i><i class="legend-high"></i><small>Low</small><small>High</small></div>
@@ -272,6 +268,6 @@
     </div>
   </div>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=2"></script>
 </body>
 </html>
