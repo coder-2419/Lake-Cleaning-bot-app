@@ -15,7 +15,7 @@ const pages = {
   overview: ['Overview', 'Good morning, Admin', "Your lake is looking good today. Here's what's happening on the water."],
   missions: ['Missions', 'Mission control', 'Track your current run or plan the next lake-cleaning mission.'],
   analytics: ['Analytics', 'Lake insights', 'Review waste detections and environmental readings.'],
-  system: ['System', 'Robot systems', 'Check camera connections, protection settings and system status.']
+  system: ['System', 'Robot systems', 'Check camera connections and system status.']
 };
 function showPage(key) {
   if (!pages[key]) return;
@@ -28,6 +28,10 @@ function showPage(key) {
 }
 $$('[data-page]').forEach(button => button.addEventListener('click', () => showPage(button.dataset.page)));
 $$('[data-page="overview"]').forEach(button => button.addEventListener('click', () => showPage('overview')));
+$('#open-camera-setup')?.addEventListener('click', () => {
+  showPage('overview');
+  requestAnimationFrame(() => $('#camera-monitor')?.scrollIntoView({ behavior:'smooth', block:'start' }));
+});
 
 function updateClock() {
   const now = new Date();
@@ -79,18 +83,18 @@ const modeProfiles = {
   'Emergency-Safe': { collection:false, sonar:true, collectionText:'Stopped · emergency safe', sonarText:'Active · safety monitoring' }
 };
 function setControlToggle(name, enabled, description) {
-  const row=$(`[data-toggle="${name}"]`); if(!row)return;
-  row.querySelector('.switch')?.classList.toggle('on',enabled);
-  const text=$(`#${name==='collection'?'conveyor':'sonar'}-status`);
-  if(text && description) text.textContent=description;
+  $$(`[data-toggle="${name}"]`).forEach(row=>row.querySelector('.switch')?.classList.toggle('on',enabled));
+  const id=name==='collection'?'conveyor-status':'sonar-status';
+  if(description) $$('#'+id).forEach(text=>text.textContent=description);
 }
 function applyOperatingMode(mode, announce=false) {
   const profile=modeProfiles[mode]; if(!profile)return;
+  $$('#mode-select').forEach(select=>{if(select.value!==mode)select.value=mode;});
   setControlToggle('collection',profile.collection,profile.collectionText);
   setControlToggle('sonar',profile.sonar,profile.sonarText);
   if(announce)notify(`${mode} mode · controls updated`);
 }
-$('#mode-select')?.addEventListener('change',event=>applyOperatingMode(event.target.value,true));
+$$('#mode-select').forEach(select=>select.addEventListener('change',event=>applyOperatingMode(event.target.value,true)));
 $$('.toggle-row').forEach(row=>row.addEventListener('click',()=>{
   const name=row.dataset.toggle;
   const enabled=!row.querySelector('.switch').classList.contains('on');
@@ -148,15 +152,15 @@ function resetMission() { missionElapsedSeconds=0; missionSecondsRemaining=missi
 $$('.start-mission').forEach(b => b.addEventListener('click', () => { if (mission==='aborted'||mission==='ended') resetMission(); mission='running'; renderMission(); notify('Mission started · simulated'); }));
 $$('.pause-mission').forEach(b => b.addEventListener('click', () => { if (mission==='ended') return; mission=mission==='running'?'paused':'running'; renderMission(); notify(mission==='paused'?'Mission paused · simulated':'Mission resumed · simulated'); }));
 $$('.stop-mission').forEach(b => b.addEventListener('click', () => { mission='aborted'; renderMission(); notify('Mission aborted · progress stopped'); }));
-$('#return-dock')?.addEventListener('click',()=>{
+$$('#return-dock').forEach(button=>button.addEventListener('click',()=>{
   mission='aborted';
-  const mode=$('#mode-select'); if(mode){mode.value='Return-to-Dock';applyOperatingMode('Return-to-Dock');}
+  applyOperatingMode('Return-to-Dock');
   renderMission();
   syncDetails();
   const signal=$('.dock-signal'); if(signal)signal.innerHTML='<i></i><i></i>';
   const dockText=$('.dock-status small'); if(dockText)dockText.textContent='Returning · simulated navigation';
   notify('Mission progress stopped · returning to dock');
-});
+}));
 $$('.mission-details').forEach(b => b.addEventListener('click', () => { syncDetails(); $('#mission-details-modal').classList.add('open'); $('#mission-details-modal').setAttribute('aria-hidden','false'); }));
 setInterval(() => {
   if (mission !== 'running') return;

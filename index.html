@@ -17,7 +17,7 @@
       <div class="workspace-label">WORKSPACE</div>
       <nav class="primary-nav" aria-label="Main navigation">
         <button class="nav-link active" data-page="overview"><span class="nav-icon">◫</span>Overview</button>
-        <button class="nav-link" data-page="missions"><span class="nav-icon">⌁</span>Missions <span class="nav-count">2</span></button>
+        <button class="nav-link" data-page="missions"><span class="nav-icon">⌁</span>Missions <span class="nav-count"></span></button>
         <button class="nav-link" data-page="analytics"><span class="nav-icon">▥</span>Analytics</button>
         <button class="nav-link" data-page="system"><span class="nav-icon">⚙</span>System</button>
       </nav>
@@ -43,7 +43,7 @@
         </section>
 
         <section class="content-grid top-content">
-          <article class="panel live-panel camera-dashboard"><div class="panel-heading"><div><div class="section-kicker">LIVE CAMERA MONITOR</div><h2>Two camera feeds <span class="tiny-live"><i></i>READY</span></h2></div><label class="demo-toggle"><input id="demo-mode" type="checkbox" checked> Demo detections</label></div>
+          <article class="panel live-panel camera-dashboard" id="camera-monitor"><div class="panel-heading"><div><div class="section-kicker">LIVE CAMERA MONITOR</div><h2>Two camera feeds <span class="tiny-live"><i></i>READY</span></h2></div><label class="demo-toggle"><input id="demo-mode" type="checkbox" checked> Demo detections</label></div>
             <div class="camera-grid">
               <section class="camera-card" data-camera-card="surface"><div class="camera-card-head"><div><b>Surface camera</b><small>Mobile IP camera · floating waste</small></div><span class="connection-state" id="surface-state">● Demo mode</span></div><div class="camera-view" id="surface-view"><img class="stream-image" id="surface-stream" alt="Surface camera stream"><div class="water-scene demo-scene surface-scene"><div class="sun-glow"></div><div class="horizon"></div><div class="shore shore-left"></div><div class="shore shore-right"></div><div class="water-ripples ripple-one"></div><div class="water-ripples ripple-two"></div><div class="detection-box detection-a"><span>Plastic bottle · 91%</span></div><div class="detection-box detection-b"><span>Floating debris · 84%</span></div></div><div class="camera-overlay-top"><span>CAM 01 · SURFACE</span></div><div class="camera-overlay-bottom"><span>Floating waste detector</span><span class="stream-fps">—</span></div></div><form class="stream-form" data-camera-form="surface"><input type="url" id="surface-url" placeholder="http://phone-ip:8080/video" aria-label="Surface camera stream URL"><button class="button" type="submit">Connect</button></form></section>
               <section class="camera-card" data-camera-card="underwater"><div class="camera-card-head"><div><b>Underwater camera</b><small>Mobile IP camera · submerged waste</small></div><span class="connection-state" id="underwater-state">● Demo mode</span></div><div class="camera-view underwater" id="underwater-view"><img class="stream-image" id="underwater-stream" alt="Underwater camera stream"><div class="water-scene demo-scene"><div class="water-ripples ripple-one"></div><div class="water-ripples ripple-two"></div><div class="detection-box detection-a"><span>Submerged plastic · 88%</span></div><div class="detection-box detection-b"><span>Debris · 79%</span></div><div class="robot-shadow"></div></div><div class="camera-overlay-top"><span>CAM 02 · UNDERWATER</span></div><div class="camera-overlay-bottom"><span id="depth-reading">Depth: unavailable · calibrate</span><span class="stream-fps">—</span></div></div><form class="stream-form" data-camera-form="underwater"><input type="url" id="underwater-url" placeholder="http://phone-ip:8081/video" aria-label="Underwater camera stream URL"><button class="button" type="submit">Connect</button></form></section>
@@ -105,11 +105,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
